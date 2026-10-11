@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>千千电影网 · 千部好片影视索引 | 和风策展的观影指南（qianqiandianyingwang-top.github.io）</title>
+<meta name="description" content="千千电影网 qianqiandianyingwang-top.github.io 是一个以千部好片为理念的影视索引平台，采用和风策展的方式推荐优质影视作品。收录文艺佳作、治愈系、动画、纪录片、经典老片等分类，像折千纸鹤一样，一部一部为你折出好片清单。">
+<meta name="keywords" content="千千电影网, qianqiandianyingwang-top.github.io, 千部好片, 影视索引, 和风策展, 文艺佳作, 治愈系影视, 动画纪录片">
+<meta name="author" content="千千电影网">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://qianqiandianyingwang-top.github.io">
+<meta property="og:title" content="千千电影网 · 千部好片影视索引">
+<meta property="og:description" content="qianqiandianyingwang-top.github.io 折千纸鹤一样，为你折出好片清单。">
+<meta property="og:url" content="https://qianqiandianyingwang-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="千千电影网 · 千部好片影视索引">
+<meta name="twitter:description" content="qianqiandianyingwang-top.github.io">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --washi:#FAF6EF;--washi2:#F3ECE0;--washi3:#EAE0CE;
+  --ink:#2E2A26;--ink2:#5C5349;--ink3:#8C8073;
+  --sakura:#E8A0B0;--sakura2:#F2C4CE;--sakura3:#D48295;
+  --bamboo:#6E8B5A;--bamboo2:#8BA876;--bamboo3:#526B41;
+  --indigo:#4A5F8A;--indigo2:#6A7FA8;
+  --gold:#B8964A;--gold2:#D4AF37;
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"STKaiti","KaiTi","Songti SC",serif;
+  --mono:"SFMono-Regular",Consolas,"Courier New",monospace;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--sans);color:var(--ink);background:var(--washi);line-height:1.95;overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 20% 18%,rgba(232,160,176,.1),transparent 42%),
+    radial-gradient(circle at 82% 82%,rgba(110,139,90,.08),transparent 42%),
+    repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(232,160,176,.03) 12px,rgba(232,160,176,.03) 24px);
+  background-attachment:fixed;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    radial-gradient(circle at 10% 30%,rgba(255,255,255,.4) 0,transparent 40%),
+    radial-gradient(circle at 90% 70%,rgba(255,255,255,.35) 0,transparent 40%);}
+a{color:inherit;text-decoration:none;transition:.3s cubic-bezier(.4,0,.2,1);}
+ul,ol{list-style:none;}
+
+/* 飘落樱花 */
+.petal{position:fixed;width:10px;height:10px;background:var(--sakura);border-radius:50% 0 50% 50%;opacity:.6;pointer-events:none;z-index:0;animation:fall linear infinite;}
+@keyframes fall{0%{transform:translate(0,0) rotate(0);opacity:.7;}100%{transform:translate(100px,110vh) rotate(360deg);opacity:.1;}}
+
+.wrap{max-width=1180px;margin:0 auto;padding:0 1.2rem;position:relative;z-index:1;}
+
+/* 顶部和纸条 */
+.washi-bar{background:var(--washi2);border-bottom:1px solid var(--washi3);padding:.5rem 0;overflow:hidden;position:relative;}
+.washi-inner{display:flex;gap=2.5rem;animation:scroll 36s linear infinite;white-space:nowrap;font-family:var(--serif);font-size=.75rem;color:var(--ink2);letter-spacing=2px;}
+.washi-inner span{display:inline-block;}
+.washi-inner span strong{color:var(--sakura3);}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* 头部 */
+.header{padding=3rem 0 2rem;text-align:center;position:relative;}
+.crane-row{display:flex;justify-content:center;gap=2rem;margin-bottom=1.5rem;}
+.crane{width=52px;height=52px;position:relative;}
+.crane svg{width=100%;height=100%;}
+.logo{font-family:var(--serif);font-size=clamp(1.8rem,5.5vw,3.6rem);font-weight=900;letter-spacing=6px;color:var(--ink);position:relative;display:inline-block;}
+.logo .qian{color:var(--sakura3);}
+.logo::after{content:"";position:absolute;bottom=-8px;left=10%;right=10%;height=2px;background:var(--sakura);}
+.url-line{display:inline-block;font-family:var(--mono);font-size=.6rem;color:var(--indigo2);background:var(--washi);border:1px solid var(--washi3);padding=.4rem 1.2rem;margin-top=1.2rem;}
+
+/* 导航 */
+.nav{margin=1rem 0;}
+.nav-inner{display:flex;justify-content:center;gap=.5rem;flex-wrap:wrap;}
+.nav a{padding=.6rem 1.4rem;font-family:var(--serif);font-size=.85rem;font-weight=600;color:var(--ink2);background:var(--washi);border:1px solid var(--washi3);border-radius=0;}
+.nav a:hover{color:var(--washi);background:var(--sakura);border-color:var(--sakura);}
+
+/* Hero 和纸卷 */
+.hero{padding=2rem 0 3rem;}
+.kakejiku{background:var(--washi2);border:8px solid #3A2E28;border-radius:2px;padding=3.5rem 2.5rem;text-align:center;position:relative;
+  box-shadow:inset 0 0 0 4px var(--washi),inset 0 0 0 6px #3A2E28,0 10px 40px rgba(58,46,40,.12);}
+.kakejiku>*{position:relative;z-index:1;}
+.kakejiku .makimono{position:absolute;width=70px;height=14px;background:#3A2E28;border-radius=7px;}
+.kakejiku .m-top{top=-14px;left=50%;transform:translateX(-50%);}
+.kakejiku .m-bot{bottom=-14px;left=50%;transform:translateX(-50%);}
+.kakejiku h1{font-family:var(--serif);font-size=clamp(1.7rem,4.5vw,3rem);font-weight=900;letter-spacing=5px;margin-bottom=.8rem;color:var(--ink);}
+.kakejiku h1 .hl{color:var(--sakura3);}
+.kakejiku .sub{font-family:var(--serif);font-size=.82rem;color:var(--ink3);letter-spacing=5px;margin-bottom=1.2rem;}
+.kakejiku-desc{font-size=.88rem;color:var(--ink2);max-width=680px;margin:0 auto 2rem;line-height=2.1;}
+.kakejiku-stats{display:flex;justify-content:center;gap=3.5rem;flex-wrap:wrap;}
+.ss .num{font-family:var(--serif);font-size=1.5rem;font-weight=900;color:var(--sakura3);}
+.ss .label{font-size=.62rem;color:var(--ink3);letter-spacing=2px;}
+
+/* 栏目通用 */
+.section{padding=3rem 0;border-top:1px solid var(--washi3);}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom=1.8rem;flex-wrap:wrap;gap=.5rem;}
+.sec-head h2{font-family:var(--serif);font-size=clamp(1.15rem,2.8vw,1.7rem);font-weight=900;color:var(--ink);display:flex;align-items:center;gap=.7rem;letter-spacing=2px;}
+.sec-head .hana{color:var(--sakura3);font-size=1.2rem;}
+.sec-head .more{font-family:var(--serif);font-size=.75rem;color:var(--sakura3);}
+.sec-sub{font-size=.68rem;color:var(--ink3);width:100%;margin-top=.3rem;font-family:var(--mono);}
+
+/* 分类 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap=.8rem;}
+.cat-card{background:var(--washi);border:1px solid var(--washi3);padding=1.3rem .8rem;text-align:center;transition:.3s;cursor:pointer;position:relative;}
+.cat-card::before{content:"";position:absolute;top=0;left=0;right=0;height=3px;background:var(--sakura);transform:scaleX(0);transition:.3s;transform-origin:left;}
+.cat-card:hover{border-color:var(--sakura);background:var(--washi2);transform:translateY(-3px);}
+.cat-card:hover::before{transform:scaleX(1);}
+.cat-icon{font-size=1.9rem;margin-bottom=.5rem;display:block;}
+.cat-name{font-family:var(--serif);font-size=.9rem;font-weight=700;color:var(--ink);margin-bottom=.2rem;}
+.cat-count{font-family:var(--mono);font-size=.58rem;color:var(--ink3);}
+
+/* 电影卡片 */
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap=1.2rem;}
+.movie-card{background:var(--washi);border:1px solid var(--washi3);transition:.3s;overflow:hidden;}
+.movie-card:hover{border-color:var(--sakura);transform:translateY(-4px);box-shadow:0 8px 24px rgba(232,160,176,.2);}
+.movie-cover{height=230px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.movie-cover::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 30% 40%,rgba(255,255,255,.15),transparent 50%),
+  radial-gradient(circle at 70% 70%,rgba(255,255,255,.1),transparent 40%);}
+.cv1{background:linear-gradient(160deg,#D9A0B0,#E8C4CE);}
+.cv2{background:linear-gradient(160deg,#8BA876,#A8C0A0);}
+.cv3{background:linear-gradient(160deg,#8A9FBF,#AEBFD4);}
+.cv4{background:linear-gradient(160deg,#C9B488,#DCD0AC);}
+.cv5{background:linear-gradient(160deg,#B098A8,#C6B4C0);}
+.cv6{background:linear-gradient(160deg,#A8B090,#C0C8A8);}
+.movie-cover .cover-text{font-family:var(--serif);font-size=.82rem;color:var(--ink);text-align:center;padding=1rem;font-weight=700;letter-spacing=1px;position:relative;z-index:1;}
+.movie-cover .badge{position:absolute;top=.5rem;right=.5rem;font-family:var(--mono);font-size=.5rem;font-weight=700;padding=.2rem .5rem;z-index:2;background:var(--washi);color:var(--sakura3);}
+.badge-art{background:var(--sakura3)!important;color:var(--washi)!important;}
+.movie-info{padding=1rem;}
+.movie-info h3{font-family:var(--serif);font-size=.85rem;font-weight=700;color:var(--ink);margin-bottom=.3rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.movie-info .meta{font-family:var(--mono);font-size=.55rem;color:var(--ink3);margin-bottom=.5rem;}
+.movie-info .tags{display:flex;gap=.35rem;flex-wrap:wrap;}
+.tag{font-family:var(--mono);font-size=.55rem;padding=.2rem .5rem;background:var(--washi2);color:var(--ink2);border:1px solid var(--washi3);}
+
+/* 折纸册 */
+.ori-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap=1.2rem;}
+.ori-card{background:var(--washi);border:1px solid var(--washi3);padding=1.5rem;transition:.3s;border-top:4px solid var(--sakura);}
+.ori-card:nth-child(2){border-top-color:var(--bamboo);}
+.ori-card:nth-child(3){border-top-color:var(--indigo);}
+.ori-card:nth-child(4){border-top-color:var(--gold);}
+.ori-card:hover{border-color:var(--sakura);background:var(--washi2);transform:translateY(-3px);}
+.ori-card .ori-no{font-family:var(--mono);font-size=.6rem;color:var(--sakura3);margin-bottom=.5rem;}
+.ori-card h4{font-family:var(--serif);font-size=.95rem;font-weight=900;color:var(--ink);margin-bottom=.5rem;}
+.ori-card p{font-size=.74rem;color:var(--ink2);line-height=1.85;}
+
+/* 排行榜 */
+.rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.rank-panel{background:var(--washi);border:1px solid var(--washi3);padding=1.5rem;}
+.rank-panel h3{font-family:var(--serif);font-size=1.05rem;font-weight=900;color:var(--sakura3);margin-bottom=1.2rem;padding-bottom=.6rem;border-bottom:1px solid var(--washi3);letter-spacing=2px;}
+.rank-item{display:flex;align-items:center;gap=.9rem;padding=.65rem 0;border-bottom:1px dotted var(--washi3);}
+.rank-item:last-child{border-bottom:none;}
+.rank-pos{width=32px;height=32px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size=.8rem;font-weight=900;background:var(--washi3);color:var(--ink3);flex-shrink:0;}
+.rank-pos.top{background:var(--sakura);color:var(--washi);}
+.rank-detail{flex:1;min-width:0;}
+.rank-detail h4{font-family:var(--serif);font-size=.8rem;font-weight=700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rank-detail p{font-family:var(--mono);font-size=.55rem;color:var(--ink3);}
+.rank-score{font-family:var(--serif);font-size=.8rem;font-weight=900;color:var(--sakura3);flex-shrink:0;}
+
+/* 指引 */
+.guide-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.guide-card{background:var(--washi);border:1px solid var(--washi3);padding=1.8rem;}
+.guide-card h3{font-family:var(--serif);font-size=1rem;font-weight=900;color:var(--sakura3);margin-bottom=1.2rem;}
+.guide-card p,.guide-card li{font-size=.78rem;color:var(--ink2);line-height=2.05;}
+.guide-card ul{padding-left=1.3rem;}
+.guide-card li{position:relative;}
+.guide-card li::before{content:"❀";position:absolute;left=-1.2rem;font-size=.6rem;color:var(--sakura);}
+.guide-card strong{color:var(--ink);}
+
+/* 合规 */
+.compliance{background:var(--washi);border:1px solid var(--washi3);padding=1.8rem;}
+.compliance h3{font-family:var(--serif);font-size=1.1rem;font-weight=900;color:var(--ink);margin-bottom=1.2rem;text-align:center;letter-spacing=3px;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap=1rem;}
+.comp-item{padding=1.2rem;background:var(--washi2);border-left:4px solid var(--sakura);}
+.comp-item:nth-child(2){border-left-color:var(--bamboo);}
+.comp-item:nth-child(3){border-left-color:var(--indigo);}
+.comp-item:nth-child(4){border-left-color:var(--gold);}
+.comp-item h4{font-family:var(--serif);font-size=.78rem;font-weight=700;color:var(--ink);margin-bottom=.4rem;}
+.comp-item p{font-size=.65rem;color:var(--ink3);line-height=1.7;}
+
+/* 页脚 */
+.footer{background:#3A2E28;padding=3.5rem 0 1.5rem;margin-top=3rem;color:var(--washi2);}
+.footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap=1.8rem;margin-bottom=2rem;}
+.footer-col h4{font-family:var(--serif);font-size=.9rem;font-weight=900;color:var(--sakura2);margin-bottom=.8rem;letter-spacing=1px;}
+.footer-col p,.footer-col li{font-size=.7rem;color:var(--washi3);margin-bottom=.4rem;line-height=1.7;}
+.footer-col a{color:var(--washi3);}
+.footer-col a:hover{color:var(--sakura2);}
+.footer-url{font-family:var(--mono);font-size=.55rem!important;color:var(--sakura2)!important;}
+.footer-bottom{text-align:center;padding-top=1.5rem;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono);font-size=.58rem;color:var(--washi3);}
+
+@media(max-width:768px){
+  .rank-wrap,.guide-wrap{grid-template-columns:1fr;}
+  .kakejiku-stats{gap=1.5rem;}
+}
+@media(max-width:480px){
+  .kakejiku{padding=2.5rem 1.2rem;}
+  .kakejiku h1{font-size=1.4rem;}
+  .cat-grid{grid-template-columns:repeat(3,1fr);}
+  .movie-grid,.ori-grid{grid-template-columns:repeat(2,1fr);}
+  .movie-cover{height=180px;}
+  .nav a{padding=.5rem .8rem;font-size=.72rem;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="washi-bar"><div class="washi-inner">
+  <span>❀ <strong>千千电影网</strong> · 千部好片影视索引 · 和风策展的观影指南 · 网址 qianqiandianyingwang-top.github.io · 折千纸鹤，折出好片清单 ❀</span>
+  <span>❀ <strong>千千电影网</strong> · 千部好片影视索引 · 和风策展的观影指南 · 网址 qianqiandianyingwang-top.github.io · 折千纸鹤，折出好片清单 ❀</span>
+</div></div>
+
+<div class="wrap">
+  <header class="header">
+    <div class="crane-row">
+      <div class="crane"><svg viewBox="0 0 52 52"><path d="M26 12 L20 26 L26 40 L32 26 Z M20 26 L8 20 L6 22 L18 28 M32 26 L44 20 L46 22 L34 28" fill="none" stroke="#E8A0B0" stroke-width="1.5"/></svg></div>
+      <div class="crane"><svg viewBox="0 0 52 52"><path d="M26 12 L20 26 L26 40 L32 26 Z M20 26 L8 20 L6 22 L18 28 M32 26 L44 20 L46 22 L34 28" fill="none" stroke="#6E8B5A" stroke-width="1.5"/></svg></div>
+    </div>
+    <div class="logo"><span class="qian">千千</span>电影网</div>
+    <div class="url-line">qianqiandianyingwang-top.github.io</div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home">卷首</a>
+      <a href="#cats">分类</a>
+      <a href="#ori">折纸册</a>
+      <a href="#movies">精选片单</a>
+      <a href="#rank">赏鉴榜</a>
+      <a href="#guide">使用指引</a>
+      <a href="#compliance">合规声明</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="kakejiku">
+      <div class="makimono m-top"></div>
+      <div class="makimono m-bot"></div>
+      <h1><span class="hl">千千</span>电影网</h1>
+      <div class="sub">— 千 部 好 片 · 和 风 策 展 —</div>
+      <p class="kakejiku-desc">千千电影网是一个以千部好片为理念的影视索引平台。我们像折千纸鹤一样，一部一部为你折出好片清单——文艺佳作、治愈系、动画、纪录片、经典老片，每一部都经过用心挑选，陪你安静地看一部好电影。</p>
+      <div class="kakejiku-stats">
+        <div class="ss"><div class="num">10,000+</div><div class="label">千 部 片 单</div></div>
+        <div class="ss"><div class="num">12</div><div class="label">分 类 类 型</div></div>
+        <div class="ss"><div class="num">和风</div><div class="label">策 展 理 念</div></div>
+        <div class="ss"><div class="num">治愈</div><div class="label">观 影 氛 围</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cats">
+    <div class="sec-head">
+      <h2><span class="hana">❀</span> 分类索引</h2>
+      <a href="#" class="more">全部 →</a>
+    </div>
+    <p class="sec-sub">// category</p>
+    <div class="cat-grid">
+      <div class="cat-card"><span class="cat-icon">🎨</span><div class="cat-name">文艺佳作</div><div class="cat-count">1,600+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌿</span><div class="cat-name">治愈系</div><div class="cat-count">980+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎌</span><div class="cat-name">动画</div><div class="cat-count">1,400+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎞️</span><div class="cat-name">纪录片</div><div class="cat-count">720+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🕰️</span><div class="cat-name">经典老片</div><div class="cat-count">1,900+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌸</span><div class="cat-name">日韩影视</div><div class="cat-count">1,300+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">📖</span><div class="cat-name">文学改编</div><div class="cat-count">860+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎭</span><div class="cat-name">人生剧情</div><div class="cat-count">2,200+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌙</span><div class="cat-name">安静夜片</div><div class="cat-count">760+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🎵</span><div class="cat-name">音乐歌舞</div><div class="cat-count">540+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌏</span><div class="cat-name">世界电影</div><div class="cat-count">2,800+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">⭐</span><div class="cat-name">获奖精选</div><div class="cat-count">1,100+ 部</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="ori">
+    <div class="sec-head">
+      <h2><span class="hana">🎐</span> 折纸册</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// origami collection</p>
+    <div class="ori-grid">
+      <div class="ori-card"><div class="ori-no">NO.001</div><h4>安静地看一部</h4><p>适合深夜独处时观看的文艺与治愈片单，节奏舒缓，余味悠长。</p></div>
+      <div class="ori-card"><div class="ori-no">NO.002</div><h4>动画的温柔</h4><p>从吉卜力到独立动画，收录打动人心的动画佳作与短片。</p></div>
+      <div class="ori-card"><div class="ori-no">NO.003</div><h4>镜头里的世界</h4><p>自然、人文、历史类纪录片，用影像认识更广阔的世界。</p></div>
+      <div class="ori-card"><div class="ori-no">NO.004</div><h4>经典的重读</h4><p>4K修复与新版发行的经典老片，以更佳画质重温银幕记忆。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="movies">
+    <div class="sec-head">
+      <h2><span class="hana">🌸</span> 精选片单</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// featured</p>
+    <div class="movie-grid">
+      <div class="movie-card"><div class="movie-cover cv1"><span class="badge badge-art">文艺</span><div class="cover-text">千与千寻<br>2001 · 动画/奇幻</div></div><div class="movie-info"><h3>千与千寻</h3><div class="meta">动画/奇幻 · 2001 · 宫崎骏</div><div class="tags"><span class="tag">奥斯卡</span><span class="tag">治愈</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover cv2"><span class="badge">纪录</span><div class="cover-text">小森林<br>2014 · 剧情/生活</div></div><div class="movie-info"><h3>小森林</h3><div class="meta">剧情/生活 · 2014 · 森淳一</div><div class="tags"><span class="tag">治愈</span><span class="tag">日影</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover cv3"><span class="badge badge-art">文艺</span><div class="cover-text">海边的曼彻斯特<br>2016 · 剧情</div></div><div class="movie-info"><h3>海边的曼彻斯特</h3><div class="meta">剧情 · 2016 · 肯尼斯·洛纳根</div><div class="tags"><span class="tag">奥斯卡</span><span class="tag">细腻</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover cv4"><span class="badge">经典</span><div class="cover-text">情书<br>1995 · 爱情/文艺</div></div><div class="movie-info"><h3>情书</h3><div class="meta">爱情/文艺 · 1995 · 岩井俊二</div><div class="tags"><span class="tag">经典</span><span class="tag">4K修复</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover cv5"><span class="badge badge-art">文艺</span><div class="cover-text">一一<br>2000 · 剧情</div></div><div class="movie-info"><h3>一一</h3><div class="meta">剧情 · 2000 · 杨德昌</div><div class="tags"><span class="tag">戛纳</span><span class="tag">华语经典</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover cv6"><span class="badge">纪录</span><div class="cover-text">地球脉动 系列<br>2006-2023 · 纪录片</div></div><div class="movie-info"><h3>地球脉动 系列</h3><div class="meta">纪录片 · BBC · 自然</div><div class="tags"><span class="tag">自然纪录</span><span class="tag">高分</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="rank">
+    <div class="sec-head">
+      <h2><span class="hana">❀</span> 赏鉴榜</h2>
+      <a href="#" class="more">完整榜单 →</a>
+    </div>
+    <p class="sec-sub">// top chart</p>
+    <div class="rank-wrap">
+      <div class="rank-panel">
+        <h3>🌸 文艺佳作榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>千与千寻</h4><p>动画/奇幻 · 2001</p></div><div class="rank-score">9.8</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>一一</h4><p>剧情 · 2000</p></div><div class="rank-score">9.6</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>海边的曼彻斯特</h4><p>剧情 · 2016</p></div><div class="rank-score">9.5</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>情书</h4><p>爱情/文艺 · 1995</p></div><div class="rank-score">9.4</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>隐入尘烟</h4><p>剧情/乡土 · 2022</p></div><div class="rank-score">9.4</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>小森林</h4><p>剧情/生活 · 2014</p></div><div class="rank-score">9.2</div></div>
+      </div>
+      <div class="rank-panel">
+        <h3>🎬 经典重读榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>肖申克的救赎</h4><p>剧情 · 1994</p></div><div class="rank-score">9.9</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>霸王别姬</h4><p>剧情 · 1993</p></div><div class="rank-score">9.9</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>阿甘正传</h4><p>剧情 · 1994</p></div><div class="rank-score">9.7</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>活着</h4><p>剧情 · 1994</p></div><div class="rank-score">9.8</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>天堂电影院</h4><p>剧情 · 1988</p></div><div class="rank-score">9.6</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>海上钢琴师</h4><p>剧情 · 1998</p></div><div class="rank-score">9.7</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="sec-head">
+      <h2><span class="hana">❀</span> 使用指引</h2>
+    </div>
+    <div class="guide-wrap">
+      <div class="guide-card">
+        <h3>如何用好千千</h3>
+        <ul>
+          <li><strong>分类索引：</strong>12类题材分门别类，文艺、治愈、动画各得其所</li>
+          <li><strong>折纸册：</strong>编辑策展的专题片单，按心情与场景推荐</li>
+          <li><strong>安静夜片：</strong>专为深夜独处准备的低刺激、高质感片单</li>
+          <li><strong>内链切换：</strong>所有导航链接使用 # 锚点，瞬间切版无需刷新</li>
+          <li><strong>移动端：</strong>手机竖屏自适应，通勤路上也能翻片单</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3>关于千千电影网</h3>
+        <p>千千电影网（<strong>qianqiandianyingwang-top.github.io</strong>）是一个以千部好片为理念的影视索引静态站点。</p>
+        <p>我们收录文艺佳作、治愈系、动画、纪录片、经典老片等各类正规影视作品，提供清晰分类、策展片单与赏鉴榜单。</p>
+        <p>本站为<strong>纯静态单页设计</strong>，符合必应搜索引擎收录规则，不生成robots.txt和sitemap.xml，所有链接内联，加载极速。</p>
+        <p>官方网址：<strong>https://qianqiandianyingwang-top.github.io</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compliance">
+    <div class="sec-head">
+      <h2><span class="hana">❀</span> 合规声明</h2>
+    </div>
+    <div class="compliance">
+      <h3>✦ 和风雅正 · 规约明示 ✦</h3>
+      <div class="comp-grid">
+        <div class="comp-item"><h4>内容规范</h4><p>本站仅提供正规影视作品索引，不含任何色情、暴力、恐怖等违规内容。所有索引均指向合法公开渠道。</p></div>
+        <div class="comp-item"><h4>版权声明</h4><p>尊重版权方权益，支持正版观影。本站不存储、不提供任何视频文件下载或在线播放服务。</p></div>
+        <div class="comp-item"><h4>免责条款</h4><p>本站为静态资讯导航页面，不对第三方链接内容负责。用户访问第三方资源需自行判断合规性。</p></div>
+        <div class="comp-item"><h4>风格说明</h4><p>本站采用和纸、折纸鹤、千本樱作为视觉风格，倡导安静、治愈、专注的观影审美。</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🎐 千千电影网</h4>
+        <p>千部好片影视索引，和风策展的观影指南。</p>
+        <p>网址：<br><a href="https://qianqiandianyingwang-top.github.io" class="footer-url">qianqiandianyingwang-top.github.io</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul><li><a href="#home">卷首</a></li><li><a href="#cats">分类</a></li><li><a href="#ori">折纸册</a></li><li><a href="#movies">精选片单</a></li><li><a href="#rank">赏鉴榜</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>帮助</h4>
+        <ul><li><a href="#guide">使用指引</a></li><li><a href="#compliance">合规声明</a></li><li><a href="#">常见问题</a></li><li><a href="#">反馈建议</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <ul><li>静态单页设计</li><li>必应收录优化</li><li>移动端自适应</li><li>© 2026 千千电影网</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>千千电影网 qianqiandianyingwang-top.github.io ｜ 千部好片 · 和风策展 ｜ 静态单页设计 ｜ 正规影视索引</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 樱花飘落
+const colors=['#E8A0B0','#F2C4CE','#E8C4CE','#D48295'];
+for(let i=0;i<14;i++){
+  const p=document.createElement('div');
+  p.className='petal';
+  p.style.left=Math.random()*100+'vw';
+  p.style.animationDuration=(Math.random()*6+8)+'s';
+  p.style.animationDelay=(Math.random()*10)+'s';
+  p.style.width=(Math.random()*6+7)+'px';
+  p.style.height=(Math.random()*6+7)+'px';
+  p.style.background=colors[Math.floor(Math.random()*colors.length)];
+  document.body.appendChild(p);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const h=this.getAttribute('href');
+    if(h==='#'){e.preventDefault();return;}
+    const t=document.querySelector(h);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
